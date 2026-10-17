@@ -35,7 +35,7 @@ weather-app/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/<your-username>/weather-app.git
+git clone https://github.com/rayhan-ui/weather-app.git
 cd weather-app
 ```
 
@@ -50,23 +50,9 @@ npm install
 1. Create a free account at [openweathermap.org](https://openweathermap.org/api)
 2. Copy your API key from the dashboard (new keys can take a little while to activate)
 
-### 4. Add your API key
 
-Create a `.env` file in the project root:
 
-```env
-VITE_WEATHER_KEY=your_api_key_here
-```
-
-Then read it in `App.jsx`:
-
-```js
-const apiKey = import.meta.env.VITE_WEATHER_KEY;
-```
-
-> ⚠️ Never commit your `.env` file. Make sure `.env` is listed in `.gitignore`.
-
-### 5. Run the app
+### 4. Run the app
 
 ```bash
 npm run dev
