@@ -35,7 +35,7 @@ weather-app/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/rayhan-ui/weather-app.git
+git clone https://github.com/rayhan-ui/my-weather-app.git
 cd weather-app
 ```
 
