@@ -1,90 +1,162 @@
-* {
+/* ===== Reset & base ===== */
+*,
+*::before,
+*::after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg-1: #1e3c72;
+  --bg-2: #2a5298;
+  --card-bg: rgba(255, 255, 255, 0.12);
+  --card-border: rgba(255, 255, 255, 0.25);
+  --text: #ffffff;
+  --text-soft: rgba(255, 255, 255, 0.75);
+  --accent: #ffb347;
+  --accent-hover: #ffa11a;
+  --radius: 16px;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
 }
 
 body {
-  font-family: sans-serif;
-  margin: 20px;
-  padding: 0;
-}
-
-h1 {
-  margin-top: 0;
-  font-size: 22px;
-}
-
-h2 {
-  margin-top: 0;
-  font-size: 20px;
-}
-
-h3 {
-  margin-top: 0;
-  font-size: 18px;
-}
-
-h4 {
-  margin-top: 0;
-  font-size: 16px;
-}
-
-h5 {
-  margin-top: 0;
-  font-size: 14px;
-}
-
-h6 {
-  margin-top: 0;
-  font-size: 12px;
-}
-
-code {
-  font-size: 1.2em;
-}
-
-ul {
-  padding-inline-start: 20px;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  font-family: sans-serif;
-  margin: 20px;
-  padding: 0;
-}
-
-.square {
-  background: #fff;
-  border: 1px solid #999;
-  float: left;
-  font-size: 24px;
-  font-weight: bold;
-  line-height: 34px;
-  height: 34px;
-  margin-right: -1px;
-  margin-top: -1px;
-  padding: 0;
-  text-align: center;
-  width: 34px;
-}
-
-.board-row:after {
-  clear: both;
-  content: '';
-  display: table;
-}
-
-.status {
-  margin-bottom: 10px;
-}
-.game {
+  min-height: 100vh;
   display: flex;
-  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  font-family: "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+  color: var(--text);
+  background: linear-gradient(135deg, var(--bg-1), var(--bg-2));
 }
 
-.game-info {
-  margin-left: 20px;
+#root {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* ===== Card (the <form>) ===== */
+form {
+  width: 100%;
+  max-width: 380px;
+  padding: 28px 24px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+form h2 {
+  text-align: center;
+  font-size: 1.6rem;
+  letter-spacing: 0.5px;
+}
+
+/* ===== Input & button ===== */
+form input {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 1rem;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid transparent;
+  border-radius: 10px;
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+form input::placeholder {
+  color: var(--text-soft);
+}
+
+form input:focus {
+  border-color: var(--accent);
+  background: rgba(255, 255, 255, 0.22);
+}
+
+form button {
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: #222;
+  background: var(--accent);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+form button:hover {
+  background: var(--accent-hover);
+}
+
+form button:active {
+  transform: scale(0.97);
+}
+
+/* ===== Weather result (the <div> inside the form) ===== */
+form > div {
+  margin-top: 6px;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  animation: fadeIn 0.4s ease;
+}
+
+form > div h3 {
+  font-size: 1.3rem;
+  text-transform: capitalize;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+
+form > div p {
+  font-size: 0.98rem;
+  color: var(--text-soft);
+  text-transform: capitalize;
+  padding-bottom: 6px;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.15);
+}
+
+form > div p:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.error{
+  color: red
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Small screens ===== */
+@media (max-width: 420px) {
+  form {
+    padding: 22px 16px;
+  }
 }
