@@ -106,4 +106,4 @@ This project is open source and available under the [MIT License](LICENSE).
 ## 👤 Author
 
 **Ray**
-- GitHub: [@your-username](https://github.com/your-username)
+- GitHub: [@rayhan-ui](https://github.com/rayhan-ui)
