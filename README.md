@@ -2,6 +2,8 @@
 
 A simple weather app built with **React**. Search any city and instantly see its current temperature, humidity, sunrise/sunset time, and country, powered by the OpenWeatherMap API.
 
+# live link: https://my-weather-app-seven-gamma.vercel.app/
+
 ## ✨ Features
 
 - 🔍 Search weather by city name
